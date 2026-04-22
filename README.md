@@ -7,22 +7,7 @@ This repository is the reusable baseline. The production POC integration current
 `nostr-forms` using an adapter pattern based on this contract.
 
 ## Architecture
-
-```mermaid
-flowchart LR
-uiLayer[ProductUI] --> appFlow[FeatureFlow]
-appFlow --> runnerFacade[LlmRunnerFacade]
-runnerFacade --> providerSelector[ProviderSelector]
-providerSelector --> webllmAdapter[WebllmAdapter]
-providerSelector --> ollamaAdapter[OllamaAdapter]
-webllmAdapter --> webgpuRuntime[WebGPUWebLLMRuntime]
-ollamaAdapter --> ollamaRuntime[OllamaRuntime]
-runnerFacade --> cacheLayer[ResponseCache]
-runnerFacade --> metricsLayer[LatencyAndStatus]
-runnerFacade --> outputGuard[OutputParserGuard]
-outputGuard --> domainMapper[DomainMapper]
-domainMapper --> productState[ProductStateUpdate]
-```
+<img width="1823" height="863" alt="image" src="https://github.com/user-attachments/assets/97f77bb6-fc11-4a9f-839f-508680859b97" />
 
 ## Why this design
 
